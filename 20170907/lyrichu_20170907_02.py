@@ -44,4 +44,3 @@ if __name__ == '__main__':
     comb_list = combinations(mylists,m,n)
     for comb in comb_list:
         print(" ".join(map(lambda x:str(x),comb)))
-

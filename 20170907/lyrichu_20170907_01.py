@@ -22,14 +22,16 @@ def Det(matrix,n):
                 index = j
                 break
         if(index == -1): # 如果所有首元素都为0，则行列式为0
-              return 0.00
+              return 0.
         else:
             if(index != i):
                 # 交换第index行与第i行
-                matrix[i],matrix[index] = matrix[i],matrix[index]
+                matrix[i],matrix[index] = matrix[index],matrix[i]
                 sign = -sign
         # 利用第i行将其余各行第i列变为0
         for k in range(i+1,n):
+            if(float(matrix[i][i]) == 0.):
+                return 0.
             coef = -matrix[k][i]/float(matrix[i][i])
             for t in range(i,n):
                 matrix[k][t] = matrix[k][t] + coef*matrix[i][t]
@@ -48,8 +50,3 @@ if __name__ == '__main__':
         matrix.append(line)
     det = Det(matrix,n)
     print("%.2f" % det)
-
-
-
-
-

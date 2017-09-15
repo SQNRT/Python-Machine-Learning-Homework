@@ -19,4 +19,3 @@ for i in range(1,num-1):
     distance = all_distance - abs(points_list[i-1]-points_list[i]) - abs(points_list[i+1]-points_list[i]) + abs(points_list[i-1]-points_list[i+1])
     distance_list.append(distance)
 print(min(distance_list))  # 输出最短路程
-
